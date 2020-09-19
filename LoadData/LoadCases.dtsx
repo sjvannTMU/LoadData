@@ -1,0 +1,273 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/13/2020 9:48:49 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SHIH-CHANFAEA6A"
+  DTS:CreatorName="SHIH-CHANFAEA6A\sjvann"
+  DTS:DTSID="{0C5D77AD-9722-42FF-96B2-0B7E771818AF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1028"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9C50A805-ED25-46A9-AC16-95E02A9C5BE5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LoadCasesData]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4C9E3BFB-E293-4B81-A190-33FA5D554633}"
+      DTS:ObjectName="LoadCasesData">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1028"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="950"
+          DTS:ConnectionString="C:\Sites\3h\Upload\cases_1155_1.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProjectId"
+              DTS:DTSID="{B15F561F-7D5C-4852-8841-4ECFB41458C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName=""
+              DTS:DTSID="{B0C59608-C934-4780-ADD3-3D013786C034}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="資料行 2"
+              DTS:DTSID="{0B5ED115-D632-4C42-BA80-739431748778}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="資料行 3"
+              DTS:DTSID="{11934DA7-131F-457A-AC7C-DA824F5F0056}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="資料行 4"
+              DTS:DTSID="{6600C564-F5B4-4B8D-9ACE-76C2736DD8E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="資料行 5"
+              DTS:DTSID="{8FB2C920-8D0E-4717-968D-50F762DC1099}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="資料行 6"
+              DTS:DTSID="{87C60658-5189-473D-9EAB-8163961E59A8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1E7A2519-7C5A-427E-889A-195EE18A56BF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BEC75409-0446-4350-8B5E-1589D5DD0E92}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Sites\3h\Upload</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach CasesLogFile"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="逐一讀取Cases的檔案"
+      DTS:DTSID="{94654E41-14EB-4607-A311-AFCC82E893C9}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach CasesLogFile">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{7C88ECFF-44B6-477B-A9E7-7F2C4CDA187E}"
+        DTS:ObjectName="{7C88ECFF-44B6-477B-A9E7-7F2C4CDA187E}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::FolderPath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Sites\3h\Upload" />
+            <FEFEProperty
+              FileSpec="cases*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach CasesLogFile\資料流程工作"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="資料流程工作"
+          DTS:DTSID="{164B997F-D5B1-4DD7-8979-D1C018A338F3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="資料流程工作"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="一般檔案來源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 著作權所有，並保留一切權利; http://www.microsoft.com/sql/support;1"
+                  description="一般檔案來源"
+                  name="一般檔案來源"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="指定零長度資料行是否當成 Null 處理。"
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含檔案名稱之輸出資料行的名稱。如果未指定名稱，將不會產生包含檔案名稱的輸出資料行。"
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Connections[FlatFileConnection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Outputs[一般檔案來源輸出]"
+                      name="一般檔案來源輸出">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </output>
+                    <output
+                      refId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Outputs[一般檔案來源錯誤輸出]"
+                      isErrorOut="true"
+                      name="一般檔案來源錯誤輸出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Outputs[一般檔案來源錯誤輸出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Outputs[一般檔案來源錯誤輸出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Outputs[一般檔案來源錯誤輸出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源.Outputs[一般檔案來源錯誤輸出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{961C199E-D774-41F8-B0E9-AF96BA0A9C8A}"
+          DTS:ObjectName="{961C199E-D774-41F8-B0E9-AF96BA0A9C8A}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 區段包含封裝的配置資訊。此區段包括諸如 (x,y) 座標、寬度和長度等資訊。-->
+<!--如果您手動編輯此區段但出錯，則可加以刪除。 -->
+<!--封裝仍可正常載入，但先前的配置資訊會遺失，而設計師將在設計介面上自動重新排列元素。-->
+<Objects
+  Version="8">
+  <!--下面每個節點將包含不會影響執行階段行為的屬性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach CasesLogFile\資料流程工作"
+          TopLeft="62.6666546795108,32.9999940225059" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260.5,192.5"
+          Size="260.5,235.5"
+          Id="Package\Foreach CasesLogFile"
+          TopLeft="239.166657163038,40.857140769764" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach CasesLogFile\資料流程工作">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach CasesLogFile\資料流程工作\一般檔案來源"
+          TopLeft="289.999988476436,35.285712482978" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

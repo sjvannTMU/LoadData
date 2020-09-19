@@ -1,0 +1,766 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/13/2020 9:19:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SHIH-CHANFAEA6A"
+  DTS:CreatorName="SHIH-CHANFAEA6A\sjvann"
+  DTS:DTSID="{FA9C7179-392F-4C9B-A15C-BA546BAFB4E1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="1028"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{5D1A0783-11FE-40BA-87D0-C1C72BD3492C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LoadCaseFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6B69D4B0-E8C3-4041-A24A-F8D74603074D}"
+      DTS:ObjectName="LoadCaseFile">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FolderPath] + "\\" + @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1028"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="950"
+          DTS:ConnectionString="C:\Sites\3h\Upload\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProjectId"
+              DTS:DTSID="{BAA5A3C4-9377-4BCF-9C91-C2C0E045DB1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ExperimentId"
+              DTS:DTSID="{514F4695-1A31-425E-97E6-864D11BE10E7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrentTimes"
+              DTS:DTSID="{991E72D4-C850-4FD6-9E8A-F657675E4C95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NetLogoId"
+              DTS:DTSID="{5E67ED23-F43D-4F18-B15F-FEC447B63522}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{4C38B278-0FCC-49FE-AB9A-D46EC6AA3B66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="InitAge"
+              DTS:DTSID="{A7E0EC12-2A62-4C3D-AEBC-4AEE30DEE1EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthMonth"
+              DTS:DTSID="{EB513EED-E882-44CC-A37E-BBB9E595F691}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SHIH-CHANFAEA6A.ThreeHighLogs.thdba]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4BD63799-C472-4236-9A36-19F70F1FDC26}"
+      DTS:ObjectName="SHIH-CHANFAEA6A.ThreeHighLogs.thdba">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=Localhost;User ID=thdba;Initial Catalog=ThreeHighLogs;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAw/yLUuEMdUWHo96YmYCKRgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA85V1u8EK/eZThcKYuAk2c0Sd8MS7zu38FwS1fsX3lugAAAAAOgAAAAAIAACAAAADm52zaHePbNT6Td7Pq3ZseNCemH61Oyqahqyg01FrhwyAAAAAEz+YrYyZ7iriENdYc34lhAQebq2gnqbmeDC8MskVRLUAAAACCMtVwacdfnpuDtgIBb9weX59gEJuXWSaDt636jfzWvnDaz1JHS7JBXw/TP+nU15UJBE7fPIqHI1ZnY5Gru4Vt</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{42404390-C9A9-437D-9F62-590A8DE96129}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E62EBE7-8417-4367-B3BC-C63F7590A717}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Sites\3h\Upload</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach 迴圈容器"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach 迴圈容器"
+      DTS:DTSID="{2684F452-0CA7-4DB3-9AAE-18FAC7C14C68}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach 迴圈容器">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{79115CED-A2E2-4FC3-9F65-88A34D7D86F3}"
+        DTS:ObjectName="{79115CED-A2E2-4FC3-9F65-88A34D7D86F3}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::FolderPath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Sites\3h\Upload" />
+            <FEFEProperty
+              FileSpec="cases_*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach 迴圈容器\檔案系統工作"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="檔案系統工作"
+          DTS:Disabled="True"
+          DTS:DTSID="{4A52A386-38D2-43B6-854E-5605DE5200A4}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="檔案系統工作"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="DeleteFile"
+              TaskSourcePath="{6B69D4B0-E8C3-4041-A24A-F8D74603074D}" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach 迴圈容器\資料流程工作"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="資料流程工作"
+          DTS:DTSID="{66955DC4-0E5C-4B13-865E-E2062272C507}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="資料流程工作"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 目的地;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 著作權所有，並保留一切權利; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 目的地"
+                  name="OLE DB 目的地"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="命令逾時之前的秒數。值為 0 表示無限逾時。"
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="指定用於開啟資料列集之資料庫物件的名稱。"
+                      name="OpenRowset">[dbo].[Cases]</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含用於開啟資料列集之資料庫物件名稱的變數。"
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="要執行的 SQL 命令。"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定無法從資料來源取得字碼頁資訊時，要使用的資料行字碼頁。"
+                      name="DefaultCodePage">950</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="描述字元資料時，強制使用 DefaultCodePage 屬性值。"
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定用於存取資料庫的模式。"
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指出提供給識別欄位的值是否複製到目的地。如果為 False，則會在目的地自動產生識別欄位的值。只有在開啟快速載入時才會套用。"
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="指出包含 Null 之資料行的 Null 是否會插入目的地。若是 False，則包含 Null 的資料行的預設值會插入目的地。唯有開啟快速載入時才適用。"
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="指定快速載入使用的選項。只有開啟快速載入時才會套用。"
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="指定在資料插入期間發出認可的時間。值為 0 指定在資料插入結束時發出一次認可。只有開啟快速載入時才會套用。"
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SHIH-CHANFAEA6A.ThreeHighLogs.thdba]"
+                      connectionManagerRefId="Package.ConnectionManagers[SHIH-CHANFAEA6A.ThreeHighLogs.thdba]"
+                      description="用於存取資料庫的 OLE DB 執行階段連接。"
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入]"
+                      errorOrTruncationOperation="插入"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 目的地輸入">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[ProjectId]"
+                          cachedDataType="numeric"
+                          cachedName="ProjectId"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[ProjectId]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[ProjectId]" />
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[ExperimentId]"
+                          cachedDataType="numeric"
+                          cachedName="ExperimentId"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[ExperimentId]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[ExperimentId]" />
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[NetLogoId]"
+                          cachedDataType="numeric"
+                          cachedName="NetLogoId"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[NetLogoId]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[NetLogoId]" />
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[Gender]"
+                          cachedDataType="numeric"
+                          cachedName="Gender"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[Gender]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[Gender]" />
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[InitAge]"
+                          cachedDataType="numeric"
+                          cachedName="InitAge"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[InitAge]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[InitAge]" />
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[BirthMonth]"
+                          cachedDataType="numeric"
+                          cachedName="BirthMonth"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[BirthMonth]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[BirthMonth]" />
+                        <inputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].Columns[CurrentTimes]"
+                          cachedDataType="numeric"
+                          cachedName="CurrentTimes"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[Times]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[CurrentTimes]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[ProjectId]"
+                          dataType="i4"
+                          name="ProjectId" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[Times]"
+                          dataType="i4"
+                          name="Times" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[NetLogoId]"
+                          dataType="i4"
+                          name="NetLogoId" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[ExperimentId]"
+                          dataType="i4"
+                          name="ExperimentId" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[Gender]"
+                          dataType="i4"
+                          name="Gender" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[InitAge]"
+                          dataType="i4"
+                          name="InitAge" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入].ExternalColumns[BirthMonth]"
+                          dataType="i4"
+                          name="BirthMonth" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Outputs[OLE DB 目的地錯誤輸出]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 目的地錯誤輸出"
+                      synchronousInputId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Outputs[OLE DB 目的地錯誤輸出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Outputs[OLE DB 目的地錯誤輸出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Outputs[OLE DB 目的地錯誤輸出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Outputs[OLE DB 目的地錯誤輸出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="一般檔案來源;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 著作權所有，並保留一切權利; http://www.microsoft.com/sql/support;1"
+                  description="一般檔案來源"
+                  localeId="1028"
+                  name="讀取Case檔案"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="指定零長度資料行是否當成 Null 處理。"
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="指定包含檔案名稱之輸出資料行的名稱。如果未指定名稱，將不會產生包含檔案名稱的輸出資料行。"
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LoadCaseFile]"
+                      connectionManagerRefId="Package.ConnectionManagers[LoadCaseFile]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出]"
+                      name="一般檔案來源輸出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[ProjectId]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[ProjectId]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[ProjectId]"
+                          name="ProjectId"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[ExperimentId]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[ExperimentId]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[ExperimentId]"
+                          name="ExperimentId"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[CurrentTimes]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[CurrentTimes]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[CurrentTimes]"
+                          name="CurrentTimes"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[NetLogoId]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[NetLogoId]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[NetLogoId]"
+                          name="NetLogoId"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[Gender]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[Gender]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[Gender]"
+                          name="Gender"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[InitAge]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[InitAge]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[InitAge]"
+                          name="InitAge"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[BirthMonth]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="轉換"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[BirthMonth]"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].Columns[BirthMonth]"
+                          name="BirthMonth"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料行是否使用更快、地區設定中立的剖析常式。"
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="指出資料是否為二進位格式。"
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[ProjectId]"
+                          dataType="numeric"
+                          name="ProjectId"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[ExperimentId]"
+                          dataType="numeric"
+                          name="ExperimentId"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[CurrentTimes]"
+                          dataType="numeric"
+                          name="CurrentTimes"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[NetLogoId]"
+                          dataType="numeric"
+                          name="NetLogoId"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[Gender]"
+                          dataType="numeric"
+                          name="Gender"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[InitAge]"
+                          dataType="numeric"
+                          name="InitAge"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出].ExternalColumns[BirthMonth]"
+                          dataType="numeric"
+                          name="BirthMonth"
+                          precision="18" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出]"
+                      isErrorOut="true"
+                      name="一般檔案來源錯誤輸出">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出].Columns[一般檔案來源錯誤輸出資料行]"
+                          codePage="950"
+                          dataType="text"
+                          description="一般檔案來源錯誤輸出資料行"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出].Columns[一般檔案來源錯誤輸出資料行]"
+                          name="一般檔案來源錯誤輸出資料行" />
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源錯誤輸出].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach 迴圈容器\資料流程工作.Paths[一般檔案來源輸出]"
+                  endId="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地.Inputs[OLE DB 目的地輸入]"
+                  name="一般檔案來源輸出"
+                  startId="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案.Outputs[一般檔案來源輸出]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach 迴圈容器.PrecedenceConstraints[條件約束]"
+          DTS:CreationName=""
+          DTS:DTSID="{25574144-5A9B-4C74-9DB9-A55E94DBED1C}"
+          DTS:From="Package\Foreach 迴圈容器\資料流程工作"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="條件約束"
+          DTS:To="Package\Foreach 迴圈容器\檔案系統工作" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D40A78B2-7C41-42A3-ABF7-7CFC95EB2314}"
+          DTS:ObjectName="{D40A78B2-7C41-42A3-ABF7-7CFC95EB2314}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 區段包含封裝的配置資訊。此區段包括諸如 (x,y) 座標、寬度和長度等資訊。-->
+<!--如果您手動編輯此區段但出錯，則可加以刪除。 -->
+<!--封裝仍可正常載入，但先前的配置資訊會遺失，而設計師將在設計介面上自動重新排列元素。-->
+<Objects
+  Version="8">
+  <!--下面每個節點將包含不會影響執行階段行為的屬性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach 迴圈容器\資料流程工作"
+          TopLeft="58.333318299718,29.3571367847679" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach 迴圈容器\檔案系統工作"
+          TopLeft="60.8333182003767,105.49999003751" />
+        <EdgeLayout
+          Id="Package\Foreach 迴圈容器.PrecedenceConstraints[條件約束]"
+          TopLeft="135.083318250047,71.3571367847679">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1428532527422"
+              Start="0,0"
+              End="0,26.6428532527422">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6428532527422" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="252,202.5"
+          Size="252,245.5"
+          Id="Package\Foreach 迴圈容器"
+          TopLeft="319.999987284343,46.42856905655" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach 迴圈容器\資料流程工作">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Foreach 迴圈容器\資料流程工作\讀取Case檔案"
+          TopLeft="459.999981721243,41.785712150895" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地"
+          TopLeft="457.499981820584,171.785705509235" />
+        <EdgeLayout
+          Id="Package\Foreach 迴圈容器\資料流程工作.Paths[一般檔案來源輸出]"
+          TopLeft="536.999981770914,83.785712150895">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87.9999933583399"
+              Start="0,0"
+              End="0,80.4999933583399">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.4999933583399" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach 迴圈容器\資料流程工作\OLE DB 目的地">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
